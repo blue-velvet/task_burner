@@ -34,6 +34,16 @@ class Task
     #[ORM\Column(type: Types::DATETIMETZ_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $completedAt = null;
 
+    public function __construct(
+        string $name,
+        User $createdBy
+    )
+    {
+        $this->name = $name;
+        $this->createdAt = new \DateTimeImmutable();
+        $this->createdBy = $createdBy;
+    }
+
     public function getId(): int
     {
         return $this->id;
