@@ -9,19 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Active tasks:</h1>
-
-    {% if activeTasks|length == 0 %}
-    <p>No active tasks</p>
-    {% else %}
-    <ul>
-        {% for activeTask in activeTasks %}
-            <li>name: {{ activeTask.name }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    <a href="{{ path('app_create_task') }}" class="btn">Create new task</a>
+    <h1>Create new task:</h1>
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.description) }}
+        {{ form_row(form.period) }}
+        <button type="submit" class="btn">Save</button>
+    {{ form_end(form) }}
 
 </div>
 {% endblock %}
