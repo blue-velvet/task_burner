@@ -41,6 +41,7 @@ class CreateTaskFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => CreateTaskRequest::class,
+            'csrf_protection' => false
         ]);
     }
 }

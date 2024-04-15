@@ -12,4 +12,13 @@ class CreateTaskRequest
         public ?User $createdBy = null,
     ) {
     }
+
+    public function toArray(): array
+    {
+        return [
+            $this->name,
+            $this->createdAt,
+            $this->createdBy,
+        ];
+    }
 }
